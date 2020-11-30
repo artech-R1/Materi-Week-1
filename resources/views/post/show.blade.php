@@ -8,11 +8,11 @@
                     Postingan
                 </div>
                 <div class="card-body">
-                    Judul
-                    <h2>{{$post->title}}</h2>
+                 
+                   <h2>{{$post->title}}</h2>
 
                     <hr>
-                    Tag
+                    
                     <h5>{{$post->tag}}</h5>
                     <hr>
 
@@ -25,22 +25,20 @@
                 </div>
             </div>
             <!-- comments Form -->
-            <div class="card">
-                <div class="card-header">
-                    Tambah Blog
-                </div>
-                <div class="card-body">
-                    <form action="{{url('post')}}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="" class="control-label">Title</label>
-                            <input type="text" class="form-control" name="title">
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="control-label">Tag</label>
-                            <input type="text" class="form-control" name="tag">
-                        </div>
-
+            <div class="card-header">
+                Tambah Blog
+            </div>
+            <div class="card-body">
+                <form action="{{url('post')}}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label for="" class="control-label">Title</label>
+                        <input type="text" class="form-control" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label">Tag</label>
+                        <input type="text" class="form-control" name="tag">
+                    </div>
                     </form>
                 </div>
             </div>

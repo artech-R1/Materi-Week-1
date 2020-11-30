@@ -21,8 +21,7 @@ use Spatie\Permission\Middlewares\RoleMiddleware;
 Auth::routes();
 
 
-Route::middleware('role:admin')->get('/', [HomeController::class, 'index'])->name('home');
+Route::middleware('role:admin')->get('/', [HomeController::class, 'index'])->name('/');
 Route::middleware('role:admin')->resource('admin/user', UserController::class);
 Route::resource('post', PostController::class);
-Route::get('userpost', [HomeController::class, 'userdata']);
 Route::get('userpost', [HomeController::class, 'userPost']);

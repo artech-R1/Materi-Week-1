@@ -16,12 +16,11 @@ class UserController extends Controller
 
     function create()
     {
-       
     }
 
     function store()
     {
-         }
+    }
 
     function show(User $user)
     {
@@ -37,12 +36,12 @@ class UserController extends Controller
 
     function update(User $user)
     {
-        $user->nama = request('nama');
+        $user->name = request('nama');
         $user->email = request('email');
         if (request('password')) $user->password = bcrypt(request('password'));
+        $user->save();
 
-
-        return redirect('admin/user')->with('success', 'Data berhasil disimpan');
+        return redirect('admin/user')->with('success', 'Data berhasil edit');
     }
 
     function destroy(User $user)

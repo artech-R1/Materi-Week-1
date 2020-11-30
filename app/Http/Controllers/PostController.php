@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -14,14 +15,13 @@ class PostController extends Controller
     }
 
 
-    
+
     function index()
     {
         $user = request()->user();
         $data['list_post'] = $user->post;
-        return view('post.blog', $data);
+        return view('post.index', $data);
     }
-
     function create()
     {
         return view('post.create');

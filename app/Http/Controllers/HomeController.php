@@ -33,10 +33,4 @@ class HomeController extends Controller
         $data['list_post'] = $user->post;
         return view('post.userpost', $data);
     }
-
-    function userdata(Post $post)
-    {
-        $data['post'] = $post;
-        return view('post.userpost', $data);
-    }
 }

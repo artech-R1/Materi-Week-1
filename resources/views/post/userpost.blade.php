@@ -2,33 +2,26 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="post-preview">
+        @foreach($list_post as $post)
 
-                @foreach($list_post as $post)
-                <a href="{{url('post', $post->id)}}">
-                    <h2 class="post-title">
-                        {{$post->title}} </h2>
-                    <h3 class=" post-subtitle">
-                        {{$post->tag}}
-                    </h3>
-                </a>
-
-
-
-
-                <p class="post-meta">Posted by
-                    <a href="#"> {{$post->user->name}}</a>
-                    {{$post->created_at}}</p>
-                @endforeach
-                </a>
-
+        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+            <div class="thumbnail product-box">
+                <img src="{{url('dist')}}/img/user2-160x160.jpg" alt="" />
+                <div class="caption">
+                    <h3 class="title">{{$post->title}} </h3>
+                    <h3 class="subtitle">{{$post->tag}} </h3>
+                    <p><a href="#"> 
+                     Posted by   {{$post->user->name}} on   {{$post->user->created_at}}  
+                    </a></p>
+                   
+                  
+                </div>
             </div>
-            <hr>
+        </div>
+        @endforeach
+             
             <!-- Pager -->
-            <div class="clearfix">
-                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-            </div>
+        
         </div>
     </div>
 </div>
